@@ -2,10 +2,11 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+    background: #f8e2eb;
 }
 h1{
-    background-color: black;
-    color: white;
+    background-color: #fadfe3;
+    border-radius: 10px;
 }
 
 .App{
@@ -13,10 +14,21 @@ h1{
     justify-content: center;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFC0CB;
+    padding-bottom: 8cm;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
 .top{
+    
     display: flex;
     flex-direction: row;
-    margin-left: 3cm;
+    justify-content: center;
+    
 }
 .add{
     margin-left: 5px;
@@ -24,10 +36,12 @@ h1{
     background-color: black;
     color: aliceblue;
     padding: 5px;
+    border-radius: 5px;
 }
 
 input{
     text-align: center;
+    border-radius: 5px;
 }
 .text{
     color: white;
@@ -35,6 +49,8 @@ input{
     padding: 5px;
     font-size: 15px;
     text-align: center;
+    border-radius: 5px;
+    
 }
 
 .todo{
@@ -56,19 +72,41 @@ input{
 .iconsn{
     width: 18px;
     height: fit-content;
+    color: black;
+    margin-left: 1em;
+}
+button{
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button:nth-child(1){
+    background-color: #AFE1AF;
+    font-weight: 800;
+    color: #000000;
+}
+button:nth-child(2){
+    background-color: #FF5733 ;
+    color: aliceblue;
+    font-weight: 800;
 }
 @media screen and (max-width:768px) {
+    .App{
+        display: flex;
+        justify-content: center;
+    }
     h1{
         font-size: 16px;
-        margin-left: 3cm;
+        text-align: center;
     }
     .container{
+        display: flex;
+        justify-content: center;
         margin-top: 15px;
-        margin-right: 3cm;
+        
     }
-    .todo{
-        margin-left: 5em;
-    }
+    
     .input{
         margin-right: 10px;
     }

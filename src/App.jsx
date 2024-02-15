@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Todo from "./components/Todo";
 import { useEffect } from "react";
-import { updateTodo, addTodo, getAllTodo,deleteTodo } from "./utils/Handle";
+import { updateTodo, addTodo, getAllTodo, deleteTodo } from "./utils/Handle";
+import { GiNotebook } from "react-icons/gi";
+import { SlNotebook } from "react-icons/sl";
 
 function App() {
   const [todo, setTodo] = useState([]);
   const [text, setText] = useState("");
   const [todoId, setTodoId] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
- 
+
   const updateMode = (_id, text) => {
     setIsUpdating(true);
     setText(text);
@@ -20,8 +22,9 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Enter Your Daily Todo-Items</h1>
+        <h1>WHOAP! Enter Your Daily <GiNotebook /> Todo-Items</h1>
         <div className="top">
+        
           <input
             type="text"
             placeholder="add todos"
@@ -32,7 +35,8 @@ function App() {
             className="add"
             onClick={
               isUpdating
-                ? () => updateTodo(todoId, text, setTodo, setText, setIsUpdating)
+                ? () =>
+                    updateTodo(todoId, text, setTodo, setText, setIsUpdating)
                 : () => addTodo(text, setText, setTodo)
             }
           >
@@ -45,7 +49,7 @@ function App() {
               key={item._id}
               text={item.text}
               updateMode={() => updateMode(item._id, item.text)}
-              deleteMode={()=>deleteTodo(item._id,setTodo)}
+              deleteMode={() => deleteTodo(item._id, setTodo)}
             />
           ))}
         </div>
